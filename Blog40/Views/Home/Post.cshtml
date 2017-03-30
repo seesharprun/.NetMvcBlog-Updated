@@ -1,0 +1,21 @@
+﻿@model PostViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h1 class="display-1">
+    @Model.Title
+</h1>
+
+<blockquote class="blockquote">
+    <p class="mb-0">
+        @Model.Author.DisplayName [@Model.Category.Name]
+    </p>
+    <footer class="blockquote-footer">
+        @Model.CreatedAt.ToLongDateString()
+    </footer>
+</blockquote>
+
+<article class="mt-5">
+    @Html.FromMarkdown(Model.Content)
+</article>

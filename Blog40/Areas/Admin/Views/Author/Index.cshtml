@@ -1,0 +1,35 @@
+﻿@model AuthorListViewModel
+
+@{
+    ViewBag.Title = "Authors";
+}
+
+<h2 class="display-2 mb-5">All Authors</h2>
+
+<table class="table table-striped table-hover">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Display Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model.Authors)
+        {
+            <tr>
+                <th scope="row">@author.DisplayName</th>
+                <td>@author.FirstName</td>
+                <td>@author.LastName</td>
+                <td>
+                    <div class="btn-group btn-group-sm" role="group">
+                        @Html.ActionLink("Edit", "Edit", "Author", new { id = author.AuthorId }, new { @class = "btn btn-primary" })
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

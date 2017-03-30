@@ -1,0 +1,27 @@
+﻿@model PostListViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1 class="display-1">
+    Blog
+</h1>
+
+<div class="list-group mt-5">
+    @foreach (var post in Model.Posts)
+    {
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h3 class="mb-3">@post.Title</h3>
+                <small>@post.CreatedAt.ToShortDateString()</small>
+            </div>
+            <p class="mb-3 lead">@post.Summary</p>
+            <small>
+                <a href="@Url.Action("Post", "Home", new { slug = post.Slug })" class="btn btn-primary">
+                    Read More
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </a>
+            </small>
+        </div>
+    }
+</div>

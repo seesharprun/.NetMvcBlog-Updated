@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Overview";
+}
+
+<h1 class="display-1">
+    Overview
+</h1>
+
+<div class="container mt-5">
+    <div class="card-deck">
+        <div class="card card-inverse bg-success text-center">
+            <div class="card-block">
+                <h4 class="card-title">Posts</h4>
+                <p class="card-text">Manage individual blog posts.</p>
+                @Html.ActionLink("Manage Posts", "Index", "Post", new { }, new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+        <div class="card card-inverse bg-success text-center">
+            <div class="card-block">
+                <h4 class="card-title">Authors</h4>
+                <p class="card-text">Manage contributors to the blog.</p>
+                @Html.ActionLink("Manage Authors", "Index", "Author", new { }, new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+    </div>
+</div>
